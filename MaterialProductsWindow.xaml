@@ -1,0 +1,21 @@
+﻿<Window x:Class="EkzamenWPF.MaterialProductsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Продукция с материалом" Height="400" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <DockPanel>
+            <TextBlock Text="Список продукции, использующей данный материал"
+                       FontSize="16" FontWeight="Bold"
+                       Margin="0,0,0,10" DockPanel.Dock="Top" />
+            <DataGrid x:Name="ProductsGrid"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Наименование продукции" Binding="{Binding ProductName}" Width="*"/>
+                    <DataGridTextColumn Header="Требуемое количество материала" Binding="{Binding RequiredQuantity, StringFormat=N2}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,55 @@
+﻿<Window x:Class="EkzamenWPF.MaterialEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EkzamenWPF"
+        mc:Ignorable="d"
+        Title="MaterialEditWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок формы -->
+        <TextBlock x:Name="HeaderText"
+                   FontSize="16" FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <!-- Поля ввода -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Text="Тип материала"/>
+            <ComboBox x:Name="TypeCombo" />
+
+            <TextBlock Text="Наименование" Margin="0,10,0,0"/>
+            <TextBox x:Name="NameText"/>
+
+            <TextBlock Text="Цена за единицу" Margin="0,10,0,0"/>
+            <TextBox x:Name="PriceText" ToolTip="Число, >= 0, с точностью до 0.01"/>
+
+            <TextBlock Text="Единица измерения" Margin="0,10,0,0"/>
+            <TextBox x:Name="UnitText"/>
+
+            <TextBlock Text="Количество в упаковке" Margin="0,10,0,0"/>
+            <TextBox x:Name="PackQtyText"/>
+
+            <TextBlock Text="Количество на складе" Margin="0,10,0,0"/>
+            <TextBox x:Name="StockQtyText"/>
+
+            <TextBlock Text="Минимальное количество" Margin="0,10,0,0"/>
+            <TextBox x:Name="MinQtyText"/>
+        </StackPanel>
+
+        <!-- Кнопки Сохранить / Отменить -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Сохранить"
+                    Click="SaveButton_Click"
+                    Width="100" Margin="0,0,10,0"/>
+            <Button Content="Отмена"
+                    Click="CancelButton_Click"
+                    Width="100"/>
+        </StackPanel>
+    </Grid>
+</Window>
